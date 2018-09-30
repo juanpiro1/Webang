@@ -35,7 +35,7 @@ export class GeocodingService {
   }); */
   }
   obtenerpol(): Observable<any>{
-    return this.Http.get('http://localhost:4200/assets/Bogota.json');
+    return this.Http.get('http://31.220.55.5:3000:4200/assets/Bogota.json');
   }
   ingresardir(dir :Direccion) : Observable<any>{
     return this.Http.post(this.urld, dir);
