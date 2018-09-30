@@ -1,0 +1,30 @@
+{
+  "name": "Datos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Direccion": {
+      "type": "string",
+      "required": true
+    },
+    "Barrio": {
+      "type": "string",
+      "required": true
+    },
+    "origen": {
+      "type": "any",
+      "required": true
+    },
+    "destino": {
+      "type": "any",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
