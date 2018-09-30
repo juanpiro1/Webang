@@ -8,7 +8,7 @@ import { Observable, interval } from 'rxjs';
 export class GeocodingService {
 
   url: 'https://maps.googleapis.com/maps/api/geocode/json';
-  urld: 'http://31.220.55.5:3000/api/Datos';
+  urld: 'http://localhost:3000/api/Datos';
   headers = new HttpHeaders({
     'Content-type': 'application/json',
   });
@@ -41,7 +41,7 @@ export class GeocodingService {
     return this.Http.post(this.urld, dir);
   }
   obtenerveh():Observable<any> {
-    return this.Http.get('http://31.220.55.5:3000/api/vehiculos');
+    return this.Http.get('http://localhost:3000/api/vehiculos');
   }
 }
 
