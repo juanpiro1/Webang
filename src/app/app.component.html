@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<agm-map  [zoom]=11 [latitude]="latmap" [longitude]="lngmap">
+<agm-marker *ngIf="mostrarmark1" [latitude]="latD1" [longitude]="lngD1"></agm-marker>
+<agm-marker *ngIf="mostrarmark2" [latitude]="latD2" [longitude]="lngD2"></agm-marker>
+<ng-container *ngFor="let column of carro; let in = index">
+<agm-marker [iconUrl]="icono" [latitude]="carro[in].Latitud" [longitude]="carro[in].Longitud"></agm-marker>
+</ng-container>
+<agm-polyline  [strokeColor]="'#2196f3'">
+    <ng-container *ngFor="let column of Bogotalat; let in = index">
+    <agm-polyline-point  [latitude]="Bogotalat[in][1]" [longitude]="Bogotalat[in][0]">
+    </agm-polyline-point>
+</ng-container>
+</agm-polyline>
+<agm-direction  *ngIf="mostrardir" [origin]="origen" [destination]="destino" [travelMode]="transitOptions"  ></agm-direction>
+</agm-map>
+
+Dreccion 1<input [(ngModel)]="Direccion1" type="text" >
+Barrio 1<input type="text" [(ngModel)]="Barrio1">
+<button name="Enviar1" (click)="Cogerdatos()" >
+ Enviar 
+</button><br>
+Dreccion 2<input type="text" [(ngModel)]="Direccion2">
+Barrio 2<input type="text" [(ngModel)]="Barrio2">
+<button name="Enviar2" (click)="Cogerdatos2()">
+ Enviar 
+</button>
+<br>
+<button name="Guardar" (click)="ingresardir()">
+    Ingresar Datos 
+   </button>
+
+   <ng-container *ngFor="let column of carro; let in = index">{{carro[in].Latitud}}</ng-container>
